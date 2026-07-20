@@ -6,27 +6,6 @@ The scripts were used to control the LOT MSH-300 monochromator, acquire photocur
 
 ## Repository Contents
 
-### `DLLToken.txt`
-
-Contains the hardware-control token definitions required to communicate with the LOT monochromator control library.
-
-The tokens identify monochromator parameters such as:
-
-* wavelength;
-* grating selection;
-* slit width;
-* constant bandwidth;
-* filter-wheel position;
-* monochromator and hardware status.
-
-
-### `ccgData_LOT_MSH-300_SN38594.xml`
-
-Configuration file describing the LOT MSH-300 monochromator system used in the measurement setup.
-
-The XML file is loaded by the control scripts when initializing the monochromator hardware and its associated components.
-
-
 ### `mono_keeper_with_pico.py`
 
 Diagnostic and interactive control script for the LOT MSH-300 monochromator and Keithley 6487 picoammeter.
@@ -97,7 +76,36 @@ The pipeline:
 * assigns the spectra to `GOLD`, `SILVER`, `BRONZE`, or `REVIEW` quality categories;
 * generates full anomaly tables, ranked leaderboards, and diagnostic plots.
 
-  
+## Required Vendor Files
+
+The control scripts were developed and operated using the following files supplied with the LOT monochromator control software.
+
+### `DLLToken.txt`
+
+Contains the hardware-control token definitions used to communicate with the LOT monochromator control library.
+
+These tokens identify parameters and commands associated with:
+
+* wavelength selection;
+* grating selection;
+* slit width;
+* constant-bandwidth operation;
+* filter-wheel position;
+* monochromator and hardware status.
+
+### `ccgData_LOT_MSH-300_SN38594.xml`
+
+Contains the system configuration for the LOT MSH-300 monochromator and its associated hardware components.
+
+The control scripts load this XML file during hardware initialization.
+
+### Availability
+
+These files were required for the measurements performed in this thesis. However, they are not included in this repository because they were supplied by the hardware manufacturer and I do not have permission or a licence to redistribute them publicly.
+
+Users wishing to operate the scripts with a LOT monochromator must obtain the appropriate token-definition and system-configuration files through the manufacturer, the licensed control-software installation, or their laboratory’s authorized hardware setup. The file paths in the scripts must then be updated to match the local installation.
+
+
 ## Hardware and Software
 
 The control scripts were developed for the following laboratory equipment:
